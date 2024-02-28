@@ -1,0 +1,11 @@
+<table >
+  <tbody>
+    <tr >
+      <td>{{index + 1}}</td>
+      <td>{{task.taskName}}</td>
+      <td> Said Ahmed </td>
+      <td>{{task.creationTime | date: 'medium'}}</td>
+      <button type="button"  (click)="openAgain()">Open Again</button>
+    </tr>
+  </tbody>
+</table>

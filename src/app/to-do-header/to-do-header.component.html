@@ -1,0 +1,86 @@
+
+<div class="tasks-buttons">
+  <button type="button">All</button>
+  <button type="button">Opened</button>
+  <button type="button" (click)="getCompletedTasks()">Completed</button>
+  <button type="button" (click)="getDeletedTasks()">Deleted</button>
+</div>
+
+<div>
+  <label for="task">task: </label>
+  <input type="text" id="task" [(ngModel)]="taskName" name="task">
+  <button type="submit" (click)="addToOpenedTasks()">Add</button>
+</div>
+
+<div *ngIf="isAdded">
+  <h3>opened tasks</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Task Name</th>
+      <th>Creator Name</th>
+      <th>Creation Time</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      <app-to-do-list
+        *ngFor="let task of opendTasks; let index=index"
+        [task]="task"
+        [index]="index"
+        (indexOfTaskToDelete)="deleteTask($event)"
+        (indexOfTaskToComplete)="completeTask($event)"
+      ></app-to-do-list>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="isDeleted">
+  <h3>deleted tasks</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Task Name</th>
+      <th>Creator Name</th>
+      <th>Creation Time</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <app-to-do-deleted-list
+        *ngFor="let task of deletedTasks; let index=index"
+        [task]="task"
+        [index]="index"
+      (taskToResotre)="taskToResotreFromDeleted($event)" >
+      </app-to-do-deleted-list>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="isCompleted">
+  <hr>
+  <h3>opened tasks</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Task Name</th>
+      <th>Creator Name</th>
+      <th>Creation Time</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <app-to-do-completed
+      *ngFor="let task of completedTasks; let index=index"
+      [task]="task"
+      [index]="index"
+      (taskToResotre)="taskToRestoreFromCompleted($event)">
+    </app-to-do-completed>
+    </tbody>
+  </table>
+
+</div>
+

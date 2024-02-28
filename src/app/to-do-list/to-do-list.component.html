@@ -1,0 +1,16 @@
+<table >
+  <tbody>
+  <tr class="todo-task-row">
+    <td class="todo-task-cell">{{index + 1}}</td>
+    <td class="todo-task-cell">{{task.taskName}}</td>
+    <td class="todo-task-cell">Said Ahmed</td>
+    <td class="todo-task-cell">{{task.creationTime | date: 'medium'}}</td>
+    <td class="todo-task-action-cell">
+      <button type="button"  (click)="deleteTask()">Delete</button>
+      <button type="button"  (click)="CompleteTask()">Completed</button>
+      <button type="button"  (click)="editTaks()">Edit</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
