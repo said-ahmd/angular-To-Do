@@ -1,34 +1,53 @@
-/* to-do-list.component.css */
-.todo-task-row {
-  background-color: #ffffff; /* Default background for task rows */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.todo-task-row:nth-child(even) {
-  background-color: #f8f9fa; /* Slightly different background for even rows for zebra-striping */
+.task-table th,
+.task-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-.todo-task-delete-btn {
-  background-color: #dc3545;
+.task-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.task-actions button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn {
+  background-color: #ff4d4f;
   color: white;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px; /* Adjust font size as needed */
 }
 
-.todo-task-delete-btn:hover {
-  background-color: #c82333; /* Darker shade on hover for better user feedback */
+.complete-btn {
+  background-color: #52c41a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Additional styles specific to the task component */
-.todo-task-cell {
-  padding: 8px; /* Ensure consistent padding with the header cells */
-  text-align: left; /* Align text to the left, can adjust based on content */
+.edit-btn {
+  background-color: #3498ff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* You might not need this if the delete button is the only element,
-   but it's here for completeness */
-.todo-task-action-cell {
-  text-align: center; /* Center the delete button or any action within the cell */
-}
+

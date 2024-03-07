@@ -11,7 +11,7 @@ describe('ToDoDeletedListComponent', () => {
       imports: [ToDoDeletedListComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ToDoDeletedListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

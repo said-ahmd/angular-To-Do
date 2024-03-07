@@ -1,11 +1,24 @@
-<table >
+<h3>Completed Tasks</h3>
+<table>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Task Name</th>
+    <th>Creator Name</th>
+    <th>Creation Time</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
   <tbody>
-    <tr >
-      <td>{{index + 1}}</td>
-      <td>{{task.taskName}}</td>
-      <td> Said Ahmed </td>
-      <td>{{task.creationTime | date: 'medium'}}</td>
-      <button type="button"  (click)="openAgain()">Open Again</button>
-    </tr>
+  <tr *ngFor="let task of completedTasks; let index = index">
+    <td>{{ index+1 }}</td>
+    <td>{{ task?.taskName }}</td>
+    <td>Said Ahmed</td>
+    <td>{{ task.creationTime | date: 'medium' }}</td>
+    <td>
+      <button type="button"  (click)="openAgain(task,index)">Open Again</button>
+    </td>
+  </tr>
   </tbody>
 </table>
+

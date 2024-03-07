@@ -1,32 +1,37 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {DatePipe} from "@angular/common";
+import {DatePipe, NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-to-do-list',
   standalone: true,
   imports: [
-    DatePipe
+    DatePipe,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './to-do-list.component.html',
   styleUrl: './to-do-list.component.css'
 })
 export class ToDoListComponent {
-  @Input() task!: any;
-  @Input() index!: number;
 
-  @Output() indexOfTaskToDelete:EventEmitter<number>=new EventEmitter<number>();
-  @Output() indexOfTaskToComplete:EventEmitter<number>=new EventEmitter<number>();
-  @Output() indexOfTaskToEdit:EventEmitter<number>=new EventEmitter<number>();
+  @Input() opendTasks:Array<any>=[];
+  @Input() completedTasks: Array<any> = [];
+  @Input() deletedTasks:Array<any>=[];
 
-  deleteTask() {
-    this.indexOfTaskToDelete.emit(this.index);
+
+
+  deleteTask(number: number) {
+    this.deletedTasks.push(this.opendTasks.at(number));
+    this.opendTasks.splice(number,1);
   }
 
-  CompleteTask() {
-    this.indexOfTaskToComplete.emit(this.index);
+  completeTask(number: number) {
+    this.completedTasks.push(this.opendTasks.at(number));
+    this.opendTasks.splice(number,1);
   }
 
-  editTaks() {
-    this.indexOfTaskToEdit.emit(this.index)
+  editTaks(index:number) {
+    this.opendTasks.splice(index,1);
   }
+
 }

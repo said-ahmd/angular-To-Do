@@ -1,3 +1,36 @@
+<app-to-do-header
+  [opendTasks]="opendTasks"
+  [completedTasks]="completedTasks"
+  [deletedTasks]="deletedTasks"
+  (showDeleted) = "showDeleted($event)"
+  (showCompleted) = "showCompleted($event)"
+>
+</app-to-do-header>
 
-<app-to-do-header></app-to-do-header>
+<app-to-do-add
+  [opendTasks]="opendTasks"
+  >
+></app-to-do-add>
+
+<app-to-do-list
+  [opendTasks]="opendTasks"
+  [completedTasks]="completedTasks"
+  [deletedTasks]="deletedTasks"
+  >
+</app-to-do-list>
+
+<app-to-do-deleted-list
+  *ngIf="isShowDeleted && deletedTasks.length"
+  [opendTasks]="opendTasks"
+  [deletedTasks]="deletedTasks"
+>
+</app-to-do-deleted-list>
+
+<app-to-do-completed
+  *ngIf="isShowCompleted && completedTasks.length"
+  [opendTasks]="opendTasks"
+  [completedTasks]="completedTasks"
+>
+</app-to-do-completed>
+
 <router-outlet />

@@ -65,7 +65,7 @@ tr:nth-child(even) {
 }
 
 td button {
-  background-color: #dc3545;
+  background-color: #3498ff;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -73,6 +73,3 @@ td button {
   cursor: pointer;
 }
 
-td button:hover {
-  background-color: #c82333;
-}

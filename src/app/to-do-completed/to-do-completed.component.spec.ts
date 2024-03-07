@@ -11,7 +11,7 @@ describe('ToDoCompletedComponent', () => {
       imports: [ToDoCompletedComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ToDoCompletedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

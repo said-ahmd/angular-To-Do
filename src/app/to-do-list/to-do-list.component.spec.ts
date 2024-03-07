@@ -11,7 +11,7 @@ describe('ToDoListComponent', () => {
       imports: [ToDoListComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ToDoListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

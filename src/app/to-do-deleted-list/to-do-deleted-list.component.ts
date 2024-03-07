@@ -1,24 +1,25 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {DatePipe} from "@angular/common";
+import {DatePipe, NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-to-do-deleted-list',
   standalone: true,
   imports: [
-    DatePipe
+    DatePipe,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './to-do-deleted-list.component.html',
   styleUrl: './to-do-deleted-list.component.css'
 })
 export class ToDoDeletedListComponent {
 
-  @Input() task!: any;
-  @Input() index!: number;
 
-  @Output()
-  taskToResotre: EventEmitter<any>=new EventEmitter<any>();
+  @Input() opendTasks:Array<any>=[];
+  @Input() deletedTasks: Array<any>=[];
 
-  restore() {
-    this.taskToResotre.emit({'task': this.task, 'index': this.index});
+  restore(task:any, index:number) {
+    this.opendTasks.push(task);
+    this.deletedTasks.splice(index,1);
   }
 }

@@ -11,7 +11,7 @@ describe('ToDoHeaderComponent', () => {
       imports: [ToDoHeaderComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ToDoHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,16 +1,25 @@
-<table >
+<h3>opened tasks</h3>
+<table class="task-table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Task Name</th>
+    <th>Creator Name</th>
+    <th>Creation Time</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
   <tbody>
-  <tr class="todo-task-row">
-    <td class="todo-task-cell">{{index + 1}}</td>
-    <td class="todo-task-cell">{{task.taskName}}</td>
-    <td class="todo-task-cell">Said Ahmed</td>
-    <td class="todo-task-cell">{{task.creationTime | date: 'medium'}}</td>
-    <td class="todo-task-action-cell">
-      <button type="button"  (click)="deleteTask()">Delete</button>
-      <button type="button"  (click)="CompleteTask()">Completed</button>
-      <button type="button"  (click)="editTaks()">Edit</button>
+  <tr *ngFor="let openTask of opendTasks; let index = index">
+    <td>{{ index+1 }}</td>
+    <td>{{ openTask?.taskName }}</td>
+    <td>Said Ahmed</td>
+    <td>{{ openTask.creationTime | date: 'medium' }}</td>
+    <td>
+      <button type="button" class="delete-btn" (click)="deleteTask(index)">Delete</button>
+      <button type="button" class="complete-btn" (click)="completeTask(index)">Completed</button>
+      <button type="button" class="edit-btn" (click)="editTaks(index)">Edit</button>
     </td>
   </tr>
   </tbody>
 </table>
-

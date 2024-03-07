@@ -1,34 +1,78 @@
-/* to-do-list.component.css */
-.todo-task-row {
-  background-color: #ffffff; /* Default background for task rows */
+/* to-do-header.component.css */
+.tasks-buttons {
+  margin-bottom: 20px;
 }
 
-.todo-task-row:nth-child(even) {
-  background-color: #f8f9fa; /* Slightly different background for even rows for zebra-striping */
+.tasks-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.todo-task-delete-btn {
-  background-color: #dc3545;
+.tasks-buttons button:hover {
+  background-color: #0056b3;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td button {
+  background-color: #3498ff;
   color: white;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px; /* Adjust font size as needed */
 }
 
-.todo-task-delete-btn:hover {
-  background-color: #c82333; /* Darker shade on hover for better user feedback */
-}
-
-/* Additional styles specific to the task component */
-.todo-task-cell {
-  padding: 8px; /* Ensure consistent padding with the header cells */
-  text-align: left; /* Align text to the left, can adjust based on content */
-}
-
-/* You might not need this if the delete button is the only element,
-   but it's here for completeness */
-.todo-task-action-cell {
-  text-align: center; /* Center the delete button or any action within the cell */
+td button:hover {
+  background-color: #3498ff;
 }
